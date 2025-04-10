@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://ade5239.github.io/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-04-08T19:05:18.000Z">
-<meta property="article:modified_time" content="2025-04-10T04:15:32.223Z">
+<meta property="article:modified_time" content="2025-04-10T22:30:24.126Z">
 <meta property="article:author" content="Ashton Emeigh">
 <meta property="article:tag" content="Cybersecurity, Fencing, Blacksmithing">
 <meta name="twitter:card" content="summary">
@@ -315,7 +315,7 @@
 
 		<p>This project was inspired by an in-class log parser I had to build using Bash. I wanted to create a more comprehensive Python-based log analysis system designed to parse server log files while displaying key metrics and identify suspicious activity. The system extracts and summarizes metrics like IP connections, user-specific login attempts (both successful and failed), and data statistics (uploads and downloads). It then takes the data and organizes it by date.</p>
 <p>The suspicious activity module identifies potential security threats by looking at failed login attempts and anomalous behavior. It uses geopy, a real-time IP geolocation API, to determine the origin of suspicious IP address. It will then checks for signs of “impossible travel” where login attempts occur from geographically distant locations within an unrealistic time frame.</p>
-<p>Here is the general output of the parser when run. It shows the statistics for the day including Connection Counts per IP, Login Success&#x2F;Fail Counts per IP&#x2F;User, Upload Stats per IP, and Download Stats per IP.  </p>
+<p>Here is the general output of the parser when ran. It shows the statistics for the day including Connection Counts per IP, Login Success&#x2F;Fail Counts per IP&#x2F;User, Upload Stats per IP, and Download Stats per IP.  </p>
 <figure style="text-align:center; margin-bottom: 40px;">
   <img  
                      lazyload
@@ -339,7 +339,7 @@
 
 
 
-<p>Here is a section of the code that highlights how impossible travel is checked. If the code has reached this point, it noticed that the time between logins is suspicious. It will then take the suspicious username and compare the user’s previous IP to the most recent one. If the range is higher than 500km (~310 miles) it will state that the user moved too far in too little amount of time.</p>
+<p>Here is a section of the code that highlights how impossible travel is checked. If the code has reached this point, it noticed that the time between logins is suspicious. It will then take the suspicious username and compare the user’s IPs when attempting to log in. If the range is higher than 500km (~310 miles) it will state that the user moved too far in too little amount of time.</p>
 <figure style="text-align:center; margin-bottom: 40px;">
   <img  
                      lazyload
